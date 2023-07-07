@@ -37,7 +37,7 @@ body * {
 }
 
 #container {
-    width: 100px;
+    width: 100%;
     max-width: 588px;
     margin: 56px auto 0px;
     padding: 0 24px;
@@ -82,11 +82,16 @@ body * {
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
+
+    animation: slid-back 0.2s;
 }
 
 .light #swit button {
-    right: 0;
-    left: initial;
+    animation: slid-in 0.4s forwards;
+}
+
+#swit button:hover {
+    outline: 8px solid var(--hightligh-color);
 }
 
 
@@ -179,6 +184,25 @@ footer {
     }
 
     .light {
-        --bg-url: url(./assets/bg-desktop-ligth.jpg);
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+
+/* animation */ 
+@keyframes slid-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slid-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
     }
 }
